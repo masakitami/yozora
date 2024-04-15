@@ -5,6 +5,9 @@
   "extends": [
     "markuplint:recommended"
   ],
+  "rules": {
+    "character-reference": false
+  },
   "overrides": {
     "./**/*.php": {
       "rules": {

@@ -1,43 +1,592 @@
 <!doctype html>
-<html lang="ja">
+<html lang="ja" class="dark">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
     <title>Orelop Static</title>
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="shortcut icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&amp;family=Yuji+Syuku&amp;family=Zen+Kaku+Gothic+New:wght@300;400&amp;family=Zen+Old+Mincho&amp;display=swap"
+      rel="stylesheet"
+    />
     <script type="module" src="/assets/js/main.js"></script>
   </head>
-  <body>
-    <div class="hero">
-      <div class="hero__body">
-        <h1 class="hero__title font-clamp-[12,40]">Orelop Static</h1>
-      </div>
-      <ul>
-        <li>この記事はすごいタイトルです。期待して読んでください。</li>
-        <li>すごい理由</li>
-        <li>すごいかこ</li>
-        <li>すごいかこ</li>
-        <li>すごいかこ</li>
-      </ul>
-
-      <button class="dsd px-2 py-4 text-base/3 font-clamp-[12,20] hover:text-red-600">
-        ボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよボタンですよ
-      </button>
-      <div class="prose">
-        <h2>記事のタイトル</h2>
-        <ul>
-          <li>この記事はすごいタイトルです。期待して読んでください。</li>
-          <li>すごい理由</li>
-          <li>すごいかこ</li>
-          <li>すごいかこ</li>
-          <li>すごいかこ</li>
-        </ul>
-      </div>
-
-      <figure class="hero__figure aspect-square lg:aspect-video">
-        <img src="/assets/img/cover.jpg" alt="" decoding="async" width="2800" height="1865" class="size-full object-cover" />
-      </figure>
+  <body class="dark:bg-[url('../img/fv_bg.png')] dark:bg-repeat">
+    <script>
+      function toggleDarkMode() {
+        // htmlタグにdarkクラスが含まれているかどうか
+        if (document.documentElement.classList.contains("dark")) {
+          // darkクラスが含まれているならライトモードに変更
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else {
+          // darkクラスが含まれていないならダークモードに変更
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        }
+      }
+    </script>
+    <!-- <button>テーマ切り替え</button> -->
+    <div class="toggle-dark-mode">
+      <input type="checkbox" id="switch" name="mode" class="darkModeButton" onclick="toggleDarkMode()" />
+      <label class="modeButton" for="switch">ダークモード</label>
+      <span class="mt-[.25em] block text-center font-roboto-mono font-thin dark:text-white">Dark / Light</span>
     </div>
+    <main>
+      <!-- ファーストビューの背景 -->
+      <header id="js-fv" class="relative h-[max(70vw,32.5rem)] overflow-hidden bg-[url('../img/fv_bg.png')] bg-repeat text-[4em] xl:h-dvh">
+        <!-- ファーストビューのコード -->
+        <div class="absolute h-full animate-[height_20s_infinite]" translate="no" aria-hidden="true">
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            r=document.createElement(&quot;link&quot;).relL r=document.createElement(&quot;link&quot;).relL
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            function le(,e.e=t.&#125;function le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.function le(,e.e=t.&#125;function
+            le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.
+          </code>
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo| F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+          </code>
+
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            r=document.createElement(&quot;link&quot;).relL r=document.createElement(&quot;link&quot;).relL
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            function le(,e.e=t.&#125;function le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.function le(,e.e=t.&#125;function
+            le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.
+          </code>
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo| F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+          </code>
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            r=document.createElement(&quot;link&quot;).relL r=document.createElement(&quot;link&quot;).relL
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            function le(,e.e=t.&#125;function le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.function le(,e.e=t.&#125;function
+            le(,e.e=t.e.removeChild(t)&#125; function le(,e.e=t.
+          </code>
+          <code class="code-style--white animate-[marquee_400s_linear_infinite]" aria-hidden="true">
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+            l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i. l=e[o]:i[o]=e[o];if(arguments.length&gt;2&amp;&amp;(i.
+          </code>
+          <code class="code-style--white animate-[reverseMarquee_400s_linear_infinite]" aria-hidden="true">
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo| F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+            F=|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|
+          </code>
+        </div>
+        <!-- ファーストビューボックス -->
+        <div class="relative flex size-full items-center justify-center">
+          <div class="z-fv w-full px-[max(12.6vw,1rem)]">
+            <div
+              class="fv-box box-content bg-white bg-repeat px-gutter-x pb-[max(5.5vw,5.2rem)] pt-[max(5.5vw,3.2rem)] dark:bg-[url('../img/fv_bg.png')]"
+            >
+              <h1 class="screen-text">社会課題をソフトウェアの力でエレガントに解く</h1>
+              <p class="svg mb-[.5em] ml-auto w-2/4 md:hidden">
+                <img class="" src="./assets/img/videotron_corp.svg" decoding="async" alt="videotronのロゴ" width="1727" height="176" />
+              </p>
+              <div
+                class="mb-[max(1.5vw,1.0rem)] max-w-[74rem] whitespace-nowrap text-[max(3.8vw,theme(fontSize.2xl))] font-bold leading-[max(5.5vw,2.35rem)] tracking-tight dark:text-white"
+                translate="no"
+                aria-hidden="true"
+              >
+                社会課題を<br class="xs:hidden" /><span class="mr-[-0.05em]" aria-hidden="true">ソ</span
+                ><span class="mr-[-0.15em]" aria-hidden="true">フ</span>ト<span class="mr-[-0.12em]" aria-hidden="true">ウ</span>ェアの力で<br /><span
+                  class="inline-block w-fit after:mt-[.35em] after:block after:h-[.04em] after:w-full after:bg-gradient-to-r after:from-richGreen after:to-lightGreen after:content-['']"
+                >
+                  <span class="grad-text font-zenold-mincho font-medium dark:text-white"
+                    >エレガ<span class="mr-[-0.15em]" aria-hidden="true">ン</span>ト</span
+                  ><span class="mr-[0.15em]" aria-hidden="true">に</span>解く
+                </span>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-3">
+                <p lang="en" class="col-span-2 block font-roboto-mono text-[max(1.61vw,.65rem)] font-thin dark:text-white">
+                  Solving social problems<br />
+                  with the
+                  <span class="relative inline-block w-[max(7.25vw,4rem)]">
+                    <img
+                      class="absolute block w-full -translate-y-55% object-cover opacity-80 dark:hidden"
+                      src="./assets/img/elegance.svg"
+                      alt="elegance"
+                      width="100"
+                      height="20"
+                      decoding="async"
+                    />
+                    <img
+                      class="absolute hidden w-full -translate-y-55% object-cover opacity-80 dark:block"
+                      src="./assets/img/dark_elegance.svg"
+                      alt="elegance"
+                      width="113"
+                      height="73"
+                      decoding="async"
+                    />
+                  </span>
+                  of software
+                </p>
+                <p class="col-span-1 mt-auto hidden md:block">
+                  <img class="svg" src="./assets/img/videotron_corp.svg" decoding="async" alt="videotronのロゴ" width="1727" height="176" />
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ファーストビューボックス -->
+      </header>
+      <!-- ファーストビューのコード -->
+
+      <!-- message-->
+      <section class="px-[max(5vw,1rem)] py-[max(10vw,4.375rem)]">
+        <div class="grid grid-cols-1 gap-[max(2.5vw,3rem)] px-[max(7.5vw,1rem)] lg:grid-cols-2">
+          <header class="top-[6vw] block h-fit text-center font-roboto-mono text-eng-3xl lg:sticky">
+            <h2 class="text-center font-bold lg:text-left">
+              <span lang="en" class="js-typeShuffle invisible mb-[.5em] font-roboto-mono text-[max(2.6vw,1.85rem)] font-semibold dark:text-white"
+                >Message
+              </span>
+              <span class="block font-zenkaku-gothic text-[max(1.1vw,1rem)] font-thin">
+                <span class="ml-[-1em] flex items-center justify-center lg:ml-0 lg:justify-start">
+                  <span class="mb-auto mr-[.17rem] w-[max(1.75vw,1.5rem)]" aria-hidden="true">
+                    <img class="size-full object-cover" src="./assets/img/title_deco.svg" width="31" height="31" decoding="async" alt="" />
+                  </span>
+                  <span class="dark:grad-text inline-block text-[max(1.1vw,0.75rem)]">今後の展望</span>
+                </span>
+              </span>
+            </h2>
+          </header>
+          <div>
+            <p class="js-typeShuffle invisible mb-[max(2vw,2rem)] h-fit text-justify text-[max(1.3vw,1rem)]/[1.875] dark:text-white">
+              <span class="mb-[max(2vw,1rem)] block">インターネットの誕生、IT革命、そしてAIの台頭と、技術革新は目覚ましい速度で進んでいます。</span>
+              <span class="mb-[max(2vw,1rem)] block"
+                >かつて電子産業が隆盛を誇っていた頃、まさかコンピュータが産業の中心になるとは、多くの人が想像していなかったでしょう。そして今、パソコンから携帯電話、スマートフォンへと進化を遂げ、私たちの生活に欠かせない存在となっています。
+              </span>
+              <span class="mb-[max(2vw,1rem)] block"
+                >情報産業とは無縁だった企業が、業務効率化を追求する過程でソフトウェア企業へと変貌していくケースも近年目立ちます。弊社はこれまで、放送業の装置開発に携わってまいりました。放送方式もアナログからハイビジョン、そして4Kへと移り変わる中で、製品と開発手法も変化してきました。その変遷で培ってきた技術を活かし、新たな挑戦としてソフトウェア産業への参入を決断しました。
+              </span>
+              <span class="block"
+                >どのような会社へと進化していくのか、現時点では明確なビジョンを描くことは難しいです。しかし、変化を恐れず、常に挑戦し続けることで、お客様、そして、社員、皆様と共に未来を切り開いて参ります。今後とも変わらぬご愛顧とご支援を賜りますよう、よろしくお願い申し上げます。
+              </span>
+            </p>
+            <div class="grid grid-cols-1 gap-[max(2.5vw,1.5rem)] text-center lg:grid-cols-2">
+              <p class="aspect-video">
+                <img class="size-full object-cover" src="./assets/img/president.png" alt="広浜さんの写真" width="441" height="283" decoding="async" />
+              </p>
+              <div class="mt-auto text-center font-yuji-syuku lg:text-left">
+                <p class="[max(1.5vw,.95rem)] mb-[.25em] ml-[.35em] text-center text-[max(1.3vw,1rem)] leading-[1.1em] dark:text-white lg:text-left">
+                  代表取締役
+                </p>
+                <p class="font-yuji-syuku text-[max(4vw,2.5rem)] leading-none dark:text-white">廣濱 剛</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- message-->
+
+      <!-- service -->
+      <section class="px-[max(5vw,1rem)] pb-[max(10vw,4.375rem)]">
+        <div class="mx-[calc(50%-50vw)] my-0 w-screen overflow-x-hidden">
+          <span
+            class="dark:grad-text-2 block w-fit animate-[marquee2_30s_linear_infinite] whitespace-nowrap font-roboto-mono text-[max(10vw,5rem)] font-thin italic text-[#F3F4F6]"
+            lang="en"
+          >
+            <span class="dark:grad-text-2">ADVANCEMENTS&nbsp;</span><span class="dark:grad-text-2">ADVANCEMENTS&nbsp;</span
+            ><span class="dark:grad-text-2">ADVANCEMENTS&nbsp;</span><span class="dark:grad-text-2">ADVANCEMENTS&nbsp;</span>
+          </span>
+        </div>
+        <div
+          class="relative z-fv mt-[min(-7vw,-3rem)] grid bg-thinGreen px-[max(7.5vw,1rem)] py-[max(7.5vw,3rem)] dark:bg-thinWhite dark:backdrop-blur md:grid-cols-10"
+        >
+          <div class="md:col-span-6">
+            <header class="mb-[max(5vw,2.5rem)] inline-block h-fit w-full text-left font-roboto-mono text-eng-3xl md:w-fit">
+              <h2 class="font-bold dark:text-white">
+                <span lang="en" class="js-typeShuffle invisible mb-[.2em] font-roboto-mono text-[max(2.6vw,1.85rem)] font-semibold"
+                  >New&nbsp;Service</span
+                >
+                <span class="block text-center font-zenkaku-gothic text-[max(1.1vw,1rem)] font-thin md:text-left">
+                  <span class="flex items-center justify-start">
+                    <span class="mb-auto mr-[.25em] w-[max(1.75vw,1.5rem)]" aria-hidden="true">
+                      <img class="size-full object-cover" src="./assets/img/title_deco.svg" width="31" height="31" decoding="async" alt="" />
+                    </span>
+                    <span class="dark:grad-text inline-block text-[max(1.1vw,0.75rem)]">新規事業について</span>
+                  </span>
+                </span>
+              </h2>
+            </header>
+            <p class="js-typeShuffle invisible mb-[max(2.5vw,3rem)] text-justify text-[max(1.12vw,1rem)]/[1.875] dark:text-white">
+              弊社は放送用の装置を開発してきた中で、常に大容量のデータ処理技術を追求してまいりました。今後はメタバースなどの登場により、さらに膨大な量のデータ処理が求められる時代が到来します。変化の激しい時代だからこそ、「大容量データ処理とソフトウェア開発」を中心に、かつ基本的な技術力に忠実に、新たな価値創造に挑戦していく所存です。
+            </p>
+          </div>
+          <span
+            class="js-typeShuffle dark:text-stroke-width invisible hidden font-zenold-mincho text-[max(8vw,6rem)] leading-[1.15] text-white md:col-span-4 md:block md:text-right"
+            aria-hidden="true"
+            >新規<br />事業
+          </span>
+          <div id="js-info" class="mx-auto h-fit max-w-80 md:col-span-10 md:w-full md:max-w-full">
+            <!-- <picture>
+              <source media="(min-width: 768px)" srcset="./assets/img/tron_graphic.svg" />
+              <source media="(min-width: 0px)" srcset="./assets/img/tron_graphic_sp.svg" />
+              <img class="size-full" src="./assets/img/tron_graphic.svg" alt="新サービスの説明" width="1000" height="300" decoding="async" />
+            </picture> -->
+          </div>
+        </div>
+      </section>
+      <!-- service -->
+
+      <!-- mvv -->
+      <section class="px-[max(5vw,1rem)] pb-[max(10vw,4.375rem)]">
+        <div class="grid lg:grid-cols-10 lg:pl-[7.5vw]">
+          <!-- mvvの説明 -->
+          <div class="mb-8 sm:col-span-4 lg:order-1 lg:mb-0">
+            <div class="grid grid-cols-5 lg:grid-rows-2">
+              <h3
+                lang="en"
+                class="grad-text col-span-4 row-span-1 mb-[max(3vw,2rem)] font-roboto-mono text-[max(6vw,4rem)] font-medium leading-[1.2]"
+              >
+                Our<br />Source<br />Code
+              </h3>
+              <p class="row-span-1 justify-self-end">
+                <span class="mx-auto block text-right">
+                  <span class="mb-[max(1vw,1rem)] block w-[max(1.75vw,1.5rem)]" aria-hidden="true">
+                    <img class="size-full object-cover" src="./assets/img/title_deco.svg" width="31" height="31" decoding="async" alt="" />
+                  </span>
+                  <span class="js-typeShuffle invisible mx-auto block text-[max(1.1vw,0.75rem)] [writing-mode:vertical-rl] dark:text-white"
+                    >ミッション・ビジョン・バリュー</span
+                  >
+                </span>
+              </p>
+              <p class="js-typeShuffle invisible col-span-4 row-span-2 w-fit text-justify text-[max(1.3vw,1rem)]/[1.875] dark:text-white">
+                ビデオトロンでは、MVV(ミッション・ビジョン・バリュー)のことをOur-Source-Codeと表現し、組織全体に組み込む自動プログラム基盤をつくっています。私たちは柔軟かつアグレッシブにお客様の抱える課題に向き合っていきます。
+              </p>
+            </div>
+          </div>
+          <!-- /mvvの説明 -->
+          <!-- mvvのコード化の画像 -->
+          <p class="col-span-10 lg:col-span-6 lg:pr-[9.25vw]">
+            <img class="w-full object-cover" src="./assets/img/mvv_code.svg" width="1000" height="300" decoding="async" alt="mvvのコード化" />
+          </p>
+          <!-- /mvvのコード化の画像 -->
+        </div>
+
+        <!-- mvvの詳細 -->
+        <article class="lg:pl-[7.5vw]">
+          <p
+            class="text-stroke js-typeShuffle invisible hidden font-roboto-mono font-bold leading-[80%] text-transparent lg:ml-[-.05em] lg:block lg:text-[6vw]"
+            lang="en"
+          >
+            Detail of our mvv
+          </p>
+          <div class="py-[max(2.8vw,1rem)] lg:grid lg:grid-cols-4 lg:border lg:border-r-0 lg:border-t-inherit lg:pl-[max(6vw,4rem)]">
+            <p
+              class="js-typeShuffle invisible my-auto mr-auto block h-fit text-center text-[max(4vw,5rem)] font-medium tracking-[-0.01em] text-gray-200 md:tracking-widest lg:inline-block lg:text-left lg:[writing-mode:vertical-rl]"
+            >
+              詳細
+            </p>
+            <ul class="lg:col-span-3 lg:grid lg:grid-cols-3 lg:grid-rows-subgrid">
+              <li
+                class="border border-t-0 py-16 text-center lg:w-fit lg:border-y-0 lg:border-l-0 lg:border-r-[0.05em] lg:border-white lg:px-[max(2vw,1rem)] lg:py-0 lg:text-left"
+              >
+                <p lang="en" class="mb-[.5em] font-roboto-mono text-[.85rem]">&#123;Mission&#125;</p>
+                <h3 class="js-typeShuffle invisible mb-[max(1.5vw,1.5rem)] text-[1.35rem] -tracking-wider dark:text-white lg:text-[1.5vw]">
+                  社会課題を<br />ソフトウェアの力で<br />エレガントに解く
+                </h3>
+                <button
+                  data-micromodal-trigger="modal-1"
+                  class="group inline-block bg-black px-[2em] py-[.75em] text-[.75rem] text-white duration-300 hover:bg-richGreen"
+                >
+                  詳しく見る<span class="m-auto mb-[.1em] ml-[.5em] inline-block w-3 duration-500 group-hover:translate-x-full" aria-hidden="true">
+                    <img src="./assets/img/arrow.svg" width="100" height="100" decoding="async" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li
+                class="border border-t-0 py-16 text-center lg:w-fit lg:border-y-0 lg:border-l-0 lg:border-r-[0.05em] lg:border-white lg:px-[max(2vw,1rem)] lg:py-0 lg:text-left"
+              >
+                <p lang="en" class="mb-[.5em] font-roboto-mono text-[.85rem]">&#123;vision&#125;</p>
+                <h3 class="js-typeShuffle invisible mb-[max(1.5vw,1.5rem)] text-[1.35rem] -tracking-wider dark:text-white lg:text-[1.5vw]">
+                  ひらめきから、<br />繋がりと感動溢れる<br />コミュニティへ
+                </h3>
+                <button
+                  data-micromodal-trigger="modal-2"
+                  class="group inline-block bg-black px-[2em] py-[.75em] text-[.75rem] text-white duration-300 hover:bg-richGreen"
+                >
+                  詳しく見る<span class="m-auto mb-[.1em] ml-[.5em] inline-block w-3 duration-500 group-hover:translate-x-full" aria-hidden="true">
+                    <img src="./assets/img/arrow.svg" width="100" height="100" decoding="async" alt="" />
+                  </span>
+                </button>
+              </li>
+              <li class="border border-t-0 py-16 text-center lg:w-fit lg:border-0 lg:border-white lg:px-[max(2vw,1rem)] lg:py-0 lg:text-left">
+                <p lang="en" class="mb-[.5em] font-roboto-mono text-[.85rem]">&#123;value&#125;</p>
+                <ol class="mx-auto mb-[max(1.5vw,1.5rem)] w-fit">
+                  <li class="text-left">
+                    <h3 class="js-typeShuffle invisible text-[1.35rem] dark:text-white lg:whitespace-nowrap lg:text-[1.5vw]">
+                      1.原理原則は我々の道しるべ
+                    </h3>
+                  </li>
+                  <li class="text-left">
+                    <h3 class="js-typeShuffle invisible text-[1.35rem] dark:text-white lg:whitespace-nowrap lg:text-[1.5vw]">
+                      2.リスペクトファースト
+                    </h3>
+                  </li>
+                  <li class="text-left">
+                    <h3 class="js-typeShuffle invisible text-[1.35rem] dark:text-white lg:whitespace-nowrap lg:text-[1.5vw]">
+                      3.オープン性で境界を超えて
+                    </h3>
+                  </li>
+                </ol>
+                <button
+                  data-micromodal-trigger="modal-3"
+                  class="group inline-block bg-black px-[2em] py-[.75em] text-[.75rem] text-white duration-300 group-hover:translate-x-full hover:bg-richGreen"
+                >
+                  詳しく見る<span class="m-auto mb-[.1em] ml-[.5em] inline-block w-3 duration-500 group-hover:translate-x-full" aria-hidden="true">
+                    <img src="./assets/img/arrow.svg" width="100" height="100" decoding="async" alt="" />
+                  </span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </article>
+        <!-- /mvvの詳細 -->
+      </section>
+      <!-- mvv -->
+
+      <!-- 採用と問い合わせ -->
+      <section class="px-[max(5vw,1rem)] pb-[max(10vw,4.375rem)]">
+        <div class="mb-[max(6vw,2.87rem)] flex auto-rows-auto justify-between lg:px-[15.5vw]">
+          <h2 class="grad-text font-roboto-mono text-[max(6vw,4rem)] font-thin leading-[1.2] tracking-[-0.02em]">
+            Recruit <br aria-hidden="true" />and <br aria-hidden="true" />Contact
+          </h2>
+          <div class="justify-self-end lg:mt-[5.2vw]">
+            <p class="flex flex-col items-center md:mr-[.3rem] md:mt-[.25rem] md:flex-row">
+              <span class="mb-[1em] block w-[max(1.75vw,1.5rem)] sm:mr-[.5em] md:mb-0" aria-hidden="true">
+                <img class="size-full object-cover" src="./assets/img/title_deco.svg" width="31" height="31" decoding="async" alt="" />
+              </span>
+              <span
+                class="js-typeShuffle invisible inline-block text-[max(1.1vw,0.75rem)]/[1.875] tracking-[.25em] [writing-mode:vertical-rl] dark:text-white md:tracking-wider md:[writing-mode:horizontal-tb]"
+              >
+                採用とお問い合わせ
+              </span>
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-[max(5vw,1.6rem)] lg:pr-[15.5vw]">
+          <p class="js-typeShuffle invisible ml-auto text-justify text-[max(1.3vw,1rem)]/[1.875] dark:text-white lg:pl-[45.5vw]">
+            VDTには深い専門性をもちながらも、強い好奇心と広い視野をもつメンバーが集まってきています。常に新しい領域に越境し、それによって成長し続けていたい人。社会にインパクトを与える仕事がしたい人。VDTは、そんな価値観を共有できる仲間を探しています。
+          </p>
+        </div>
+
+        <!-- 問い合わせフォーム -->
+        <form action="/submit" method="post" class="mx-auto block lg:pl-[max(20vw,1rem)] lg:pr-[max(15.5vw,1rem)]">
+          <div class="mb-8 flex w-full flex-col md:flex-row">
+            <label for="name" class="mb-[.25em] font-medium text-gray-700 md:mb-0 md:basis-1/3">お名前</label>
+            <input
+              placeholder="例)山田太郎"
+              type="text"
+              id="name"
+              required
+              name="name"
+              class="border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:basis-2/3"
+            />
+          </div>
+
+          <div class="mb-8">
+            <div class="flex flex-col md:flex-row">
+              <label for="email" class="mb-[.25em] font-medium text-gray-700 md:mb-0 md:basis-1/3">メールアドレス</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="例)abc@co.jp"
+                class="block w-full border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:basis-2/3"
+              />
+            </div>
+            <span class="block sm:-translate-y-2/4" aria-live="polite" role="status">
+              <span class="js-emailError text-red-500" aria-hidden="true"></span>
+            </span>
+          </div>
+
+          <div class="mb-8">
+            <div class="flex flex-col md:flex-row">
+              <label for="number" class="mb-[.25em] font-medium text-gray-700 md:mb-0 md:basis-1/3">電話番号(ハイフンなし)</label>
+              <input
+                type="tel"
+                id="number"
+                name="number"
+                required
+                placeholder="例)08011112222"
+                class="js-block w-full border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:basis-2/3"
+              />
+            </div>
+            <span class="block sm:-translate-y-2/4" aria-live="polite" role="status">
+              <span class="js-numberError text-red-500" aria-hidden="true"></span>
+            </span>
+          </div>
+
+          <div class="mb-8 flex flex-col md:flex-row">
+            <label for="organaization" class="mb-[.25em] basis-1/3 font-medium text-gray-700 md:mb-0">組織名・学校名・所属</label>
+            <input
+              type="text"
+              id="organaization"
+              name="organaization"
+              required
+              placeholder="例)株式会社ABC"
+              class="mb-[.5em] block w-full basis-2/3 border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:mb-0"
+            />
+          </div>
+
+          <div class="select_wrapper mb-8 flex flex-col md:flex-row">
+            <label for="inquiry_type" class="mb-[.25em] block font-medium text-gray-700 md:mb-0 md:basis-1/3">お問い合わせ種類</label>
+            <select
+              name="inquiry_type"
+              id="inquiry_type"
+              class="block w-full border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:basis-2/3"
+            >
+              <option value="project">案件・プロジェクトのご依頼</option>
+              <option value="recruit">採用に関すること</option>
+              <option value="else">その他</option>
+            </select>
+          </div>
+
+          <div class="mb-8 flex flex-col md:flex-row">
+            <label for="inquiry_content" class="mb-[.25em] font-medium text-gray-700 md:mb-0 md:basis-1/3">お問い合わせ内容</label>
+            <textarea
+              name="inquiry_content"
+              id="inquiry_content"
+              rows="4"
+              class="block w-full border border-gray-300 p-2 focus:border-green-500 focus:ring-green-500 md:basis-2/3"
+            ></textarea>
+          </div>
+          <div class="py-[max(2vw,2rem)] text-center">
+            <button
+              type="submit"
+              class="group mx-auto bg-black px-[2em] py-[.75em] text-center text-[max(1.2vw,1.25rem)] text-white duration-500 hover:bg-richGreen md:w-[28vw]"
+            >
+              送信する<span class="mx-auto mb-[.1em] ml-[.5em] inline-block w-6 duration-500 group-hover:translate-x-full" aria-hidden="true">
+                <img src="./assets/img/arrow.svg" width="100" height="100" decoding="async" alt="" />
+              </span>
+            </button>
+          </div>
+        </form>
+        <!-- /問い合わせフォーム -->
+      </section>
+      <!-- /採用と問い合わせ -->
+
+      <!-- missionのモーダル -->
+      <article class="modal micromodal-slide relative z-fv" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay px-[5vw] sm:px-0" tabindex="-1" data-micromodal-close>
+          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="mb-[1.25em] text-right"><button class="modal__close" aria-label="Close modal" data-micromodal-close></button></div>
+            <div class="pb-[max(3vw,2rem)] md:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold" id="modal-1-title">
+                  解決すべき社会課題に<br translate="no" aria-hidden="true" class="md:hidden" />向き合う上で、私たちが大切にしていること
+                </h2>
+              </header>
+              <div class="modal__content mb-[2em]" id="modal-1-content">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  社会課題を解決するためには、まずその課題の本質を理解し、適切な問いを立てることが重要です。私たちは、問いを洗練し続けることで、課題の本質を浮き彫りにし、シンプルかつエレガントな解決策を見つけ出すことに情熱を注いでいます。
+                </p>
+              </div>
+              <footer class="modal__footer text-center">
+                <button class="modal__btn font-roboto-mono" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- visionのモーダル -->
+      <article class="modal micromodal-slide relative z-fv" id="modal-2" aria-hidden="true">
+        <div class="modal__overlay px-[5vw] sm:px-0" tabindex="-1" data-micromodal-close>
+          <div class="modal__container mb-0" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="mb-[1.25em] text-right"><button class="modal__close" aria-label="Close modal" data-micromodal-close></button></div>
+            <div class="sm:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold" id="modal-2-title">本質をシンプルに問い直し、一瞬の閃きで解決策を見出す</h2>
+              </header>
+              <div class="modal__content" id="modal-2-content">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  複雑な問題に直面したとき、私たちは立ち止まって、本質をシンプルに問い直す必要があります。バラバラに見える経験や知識を繋ぎ合わせ、新たな視点から問題を捉えることで、解決への道が見えてきます。この一瞬の閃きは、まさに「アハ体験」と「セレンディピティ」の結晶です。
+                </p>
+              </div>
+            </div>
+            <div class="py-[max(3vw,2rem)] sm:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold">
+                  感動と共感を共有し、<br translate="no" aria-hidden="true" class="sm:hidden" />共に歩む
+                </h2>
+              </header>
+              <div class="modal__content mb-[3em]">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  私たちは、この貴重な体験を共有し、共に歩んでいくことを大切にしています。メンバー同士で感動を分かち合い、互いのアイデアを刺激することで、更なる閃きを生み出すのです。
+                </p>
+              </div>
+              <footer class="modal__footer text-center">
+                <button class="modal__btn font-roboto-mono" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- valueのモーダル -->
+      <article class="modal micromodal-slide relative z-fv" id="modal-3" aria-hidden="true">
+        <div class="modal__overlay px-[5vw] sm:px-0" tabindex="-1" data-micromodal-close>
+          <div class="modal__container mb-0" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+            <div class="mb-[1.25em] text-right"><button class="modal__close" aria-label="Close modal" data-micromodal-close></button></div>
+            <div class="sm:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold" id="modal-3-title">
+                  原理原則は<br translate="no" aria-hidden="true" class="sm:hidden" />共に歩む我々の道しるべ：
+                </h2>
+              </header>
+              <div class="modal__content" id="modal-3-content">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  あらゆる技術の進歩によって社会は前進し続け、これまでの当たり前が一瞬にして、置き換えられて行っています。しかし、本質は原理原則に基づいています。迷ったら原理原則が我々の道標として進むべき道を見出すことができます
+                </p>
+              </div>
+            </div>
+            <div class="pt-[max(3vw,2rem)] sm:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold">
+                  オープン性で<br translate="no" aria-hidden="true" class="sm:hidden" />共に歩む境界を超えて：
+                </h2>
+              </header>
+              <div class="modal__content mb-[3em]">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  原理原則と言えども、時代の進歩と表裏一体の側面があり、非常に曖昧になることもあります。そこでオープンな議論を行うことで、解決策への道筋を探り、知識を共有することができます。多様な意見を受け入れる「皆違って皆良い」の精神が重要です。
+                </p>
+              </div>
+            </div>
+            <div class="py-[max(3vw,2rem)] sm:px-[max(25vw,6rem)]">
+              <header class="modal__header">
+                <h2 class="text-[max(2vw,1.4rem)] font-bold">リスペクトファースト：</h2>
+              </header>
+              <div class="modal__content mb-[3em]">
+                <p class="text-justify text-[max(1.3vw,1rem)]/[1.875]">
+                  VUCA時代と呼ばれる現代において、今までの様なトップダウンの組織では限界を迎えています。年齢、役職、性別を超えて、お互いの声に耳を傾け、尊重し感謝しあうフラットな関係が大切であり、互いに敬意を持って力を合せてイノベーションを起こしましょう。
+                </p>
+              </div>
+              <footer class="modal__footer text-center">
+                <button class="modal__btn font-roboto-mono" data-micromodal-close aria-label="Close this dialog window">Close</button>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </article>
+      <div id="hoge"></div>
+    </main>
   </body>
 </html>

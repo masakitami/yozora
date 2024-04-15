@@ -13,14 +13,12 @@ module.exports = {
     ecmaVersion: 2023,
   },
   rules: {
-    "tailwindcss/classnames-order": "warn",
-    "tailwindcss/enforces-negative-arbitrary-values": "warn",
-    "tailwindcss/enforces-shorthand": "warn",
-    "tailwindcss/migration-from-tailwind-2": "warn",
-    "tailwindcss/no-arbitrary-value": "off",
-    "tailwindcss/no-custom-classname": "warn",
-    "tailwindcss/no-contradicting-classname": "error",
-    "tailwindcss/no-unnecessary-arbitrary-value": "warn",
+    "tailwindcss/no-custom-classname": [
+      1,
+      {
+        whitelist: ["js-.+", "modal__.+", "dark", "dark:"],
+      },
+    ],
   },
   overrides: [
     {
@@ -35,3 +33,22 @@ module.exports = {
   },
   ignorePatterns: ["main.js"],
 };
+
+// module.exports = {
+//   extends: ["plugin:tailwindcss/recommended"],
+//   overrides: [
+//     {
+//       env: {
+//         node: true,
+//       },
+//       files: [".eslintrc.{js,cjs}"],
+//       parserOptions: {
+//         sourceType: "script",
+//       },
+//     },
+//     {
+//       files: ["*.html", "*.blade.php"],
+//       parser: "@angular-eslint/template-parser",
+//     },
+//   ],
+// };
