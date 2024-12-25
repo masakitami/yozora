@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@angular-eslint/template-parser": "^17.3.0",
+    "@hilosiva/oreroll": "^0.1.1",
     "@hilosiva/vite-plugin-html-oreder": "^0.1.3",
     "@hilosiva/vite-plugin-image-oretimaizer": "^0.2.2",
     "autoprefixer": "^10.4.14",

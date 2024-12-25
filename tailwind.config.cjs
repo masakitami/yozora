@@ -37,6 +37,17 @@ export default {
       "eng-6xl": ["5rem", "1.3"],
       "eng-7xl": ["6rem", "1.25"],
     },
+    colors: {
+      "ks-bg": "#EAEAEB",
+      "fuji-blue": "#28AAC8",
+      "fuji-red": "#FF8278",
+      "fuji-grey": "#828282",
+      "fuji-yellow": "#FA961E",
+      "fuji-brown": "#AA5A00",
+      "fuji-green": "#008C46",
+      "fuji-white": "#FFFFFF",
+      "fuji-thin-grey": "#D9D9D9",
+    },
     extend: {
       backgroundColor: {
         thinGreen: "rgba(142,164,150,0.1)",
