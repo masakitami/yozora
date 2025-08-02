@@ -12,3 +12,4 @@ Orelop Static は、俺流の静的サイト開発環境です。
 - 画像はビルド時に圧縮し、WebP、AVIFファイルを生成（htaccessで最適な画像をリスポンス）
 # shinfuji-tsunen
 # yozora
+# yozora
