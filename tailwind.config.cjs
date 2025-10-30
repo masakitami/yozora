@@ -11,70 +11,54 @@ const getClamp = (minSize, maxSize, minViewPort = 400, maxViewPort = 1600) => {
 
 export default {
   darkMode: "class",
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   content: ["./src/**/*.{html,js}"],
   theme: {
     screens: {
       xs: "530px",
+      // md: "990px",
       ...defaultTheme.screens,
+      lg: "990px",
     },
-    fontSize: {
-      xs: ["0.8", "1.56"],
-      sm: ["0.88rem", "1.68"],
-      base: ["1rem", "1.5"],
-      lg: ["1.14rem", "1.53"],
-      xl: ["1.33rem", "1.5"],
-      "2xl": ["1.6rem", "1.40"],
-      "3xl": ["2rem", "1,25"],
-      "4xl": ["2.66rem", "1.06"],
-      "5xl": ["4rem", "1.37"],
-      "eng-base": ["1rem", "1.5"],
-      "eng-lg": ["1.13rem", "1.53"],
-      "eng-xl": ["1.33rem", "1.50"],
-      "eng-2xl": ["1.6rem", "1.52"],
-      "eng-3xl": ["2rem", "1.25"],
-      "eng-4xl": ["2.68rem", "1.2"],
-      "eng-5xl": ["4rem", "1.37"],
-      "eng-6xl": ["5rem", "1.3"],
-      "eng-7xl": ["6rem", "1.25"],
-    },
+    fontSize: {},
     colors: {
-      "ks-bg": "#EAEAEB",
-      "fuji-blue": "#28AAC8",
-      "fuji-red": "#FF8278",
-      "fuji-grey": "#828282",
-      "fuji-yellow": "#FA961E",
-      "fuji-brown": "#AA5A00",
-      "fuji-green": "#008C46",
-      "fuji-white": "#FFFFFF",
-      "fuji-thin-grey": "#D9D9D9",
+      "yozora-blue": "#004E88",
+      "yozora-thinBlue": "#DAE8F1",
+      "yozora-orange": "#FFB200",
+      "yozora-richBlack": "#113E5B",
     },
     extend: {
+      backgroundImage: {
+        "blue-gradient": "linear-gradient(to bottom, #5A9FC1 0%, #f4c67c 99%)",
+      },
       backgroundColor: {
-        thinGreen: "rgba(142,164,150,0.1)",
-        thinWhite: "rgba(255,255,255,0.15)",
+        green: "#06C755",
+        white: "rgba(255,255,255,1)",
+        black: "#000000",
+        // green: "#009900",
       },
       translate: {
         "55%": "55%",
       },
       colors: {
-        blackGreen: "#009900",
-        richGreen: "#40DD6C",
-        lightGreen: "#A4E27D",
-        blueGreen: "#00E5AE",
+        green: "#009900",
+        blue: "#004E88",
         fvCodeColor: "#AFAFAF",
+        white: "#ffffff",
+        black: "#000000",
       },
       zIndex: {
         fv: "calc(infinity)",
       },
       fontFamily: {
         "zenkaku-gothic": ["Zen Kaku Gothic New", "sans-serif"],
-        "zenold-mincho": "Zen Old Mincho, serif",
-        "roboto-mono": ["Roboto Mono", "monospace"],
-        "yuji-syuku": "Yuji Syuku, serif",
+        "roboto-mono": ["lato", "monoe"],
       },
       spacing: {
-        "gutter-x": "max(5.75vw,2rem)",
-        "gutter-y": "max(5.5vw, 3.5rem)",
+        "gutter-x": "max(2vw,1.5rem)",
+        "gutter-y": "max(4.5vw, 2rem)",
       },
       keyframes: {
         height: {
@@ -89,10 +73,10 @@ export default {
           from: { transform: "translateX(0)" },
           to: { transform: "translateX(-50%)" },
         },
-        // reverseMarquee: {
-        //   from: { transform: "translateX(-50%)" },
-        //   to: { transform: "translateX(0%)" },
-        // },
+        reverseMarquee: {
+          from: { transform: "translateX(-50%)" },
+          to: { transform: "translateX(0%)" },
+        },
       },
     },
   },
@@ -101,14 +85,133 @@ export default {
     plugin(function ({ addBase, addComponents, matchUtilities, addVariant }) {
       addVariant("hover", "@media(hover:hover){ &:where(:any-link, :enabled, summary):hover }");
       addBase({
+        ":root": {
+          "--header-height": "4.5rem",
+        },
         body: {},
       }),
-        addComponents({}),
+        addComponents({
+          ".zen-kurenaido": {
+            fontFamily: "Zen kurenaido",
+          },
+          ".marker-orange": {
+            background: "linear-gradient(transparent 57%, rgba(255, 178, 0, 0.5)  57%)",
+            "font-weight": "bold",
+          },
+          ".marker-orange-thin": {
+            background: "linear-gradient(transparent 57%, rgba(255, 178, 0, 0.35)  57%)",
+          },
+          ".marker-blue": {
+            background: "linear-gradient(transparent 57%, rgba(0, 78, 136, 0.3)   57%)",
+            "font-weight": "bold",
+          },
+          ".marker-white": {
+            backgroundColor: "rgba(255, 255, 255, 0.8)",
+          },
+          ".marker-thinWhite": {
+            backgroundColor: "rgba(255, 255, 255, 0.5)",
+          },
+          ".marker-black": {
+            backgroundColor: "rgba(0, 0, 0, 0.25)",
+          },
+          ".bg-graph": {
+            backgroundImage:
+              "linear-gradient(0deg, transparent calc(100% - 1px), rgba(0, 78, 136, 0.05) calc(100% - 1px)), " +
+              "linear-gradient(90deg, transparent calc(100% - 1px), rgba(0, 78, 136, 0.05) calc(100% - 1px))",
+            backgroundSize: "16px 16px",
+            backgroundRepeat: "repeat",
+            backgroundPosition: "center center",
+            padding: "20px",
+          },
+          ".stroke": {
+            color: "transparent",
+            "-webkit-text-fill-color": "transparent",
+            "-webkit-text-stroke": "1px #FFB200",
+          },
+          ".position-center": { position: "absolute", left: "50%", top: "50%", transform: "translate(-50%, -50%)" },
+          ".banner-hover": {
+            transitionProperty: "opacity",
+            transitionDuration: "300ms",
+            transitionTimingFunction: "ease-in-out",
+          },
+          ".group:hover .banner-hover": {
+            opacity: ".5",
+          },
+          ".section-common-style": {
+            backgroundColor: "white",
+            zIndex: 2,
+            position: "relative",
+            opacity: "100",
+          },
+        }),
         matchUtilities({
           "font-clamp": (value) => {
             const [minSize, maxSize] = value.split(",");
             return {
               fontSize: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "py-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              paddingTop: getClamp(Number(minSize), Number(maxSize)),
+              paddingBottom: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "px-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              paddingLeft: getClamp(Number(minSize), Number(maxSize)),
+              paddingRight: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "mx-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              marginLeft: getClamp(Number(minSize), Number(maxSize)),
+              marginRight: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "w-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              width: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "h-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              height: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "mb-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              marginBottom: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "mr-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              marginRight: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "mt-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              marginTop: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "pb-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              paddingBottom: getClamp(Number(minSize), Number(maxSize)),
+            };
+          },
+          "pt-clamp": (value) => {
+            const [minSize, maxSize] = value.split(",");
+            return {
+              paddingTop: getClamp(Number(minSize), Number(maxSize)),
             };
           },
         });

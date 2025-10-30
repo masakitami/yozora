@@ -12,7 +12,8 @@ const dir = {
 
 export default defineConfig({
   root: dir.src,
-  // base: "./",
+  base: "./",
+  appType: "mpa", // ← 開発サーバーでも HTML を直叩きできるようになる
   publicDir: `../${dir.publicDir}`,
   plugins: [
     viteHtmlOreder(),

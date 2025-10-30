@@ -16,7 +16,7 @@ module.exports = {
     "tailwindcss/no-custom-classname": [
       1,
       {
-        whitelist: ["js-.+", "modal__.+", "dark", "dark:"],
+        whitelist: ["js-.+", "modal__.+", "dark", "dark:", "splide", "splide__.+", "&>", "section-."],
       },
     ],
   },
